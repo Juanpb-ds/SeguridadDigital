@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Simulación de Seguridad Digital: Elige tu camino</title>
+  <title>Seguridad Digital: Elige tu camino</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -45,7 +45,7 @@
   <div id="s1" class="section active">
     <p><strong>Situación 1:</strong> Alex crea una cuenta nueva para un juego. El sistema le pide crear una contraseña.</p>
     <button onclick="go('s1a')">Usa 'alex123'</button>
-    <button onclick="go('s1b')">Usa 'D3fi3nd3_M1_C0ntr4$eña!'</button>
+    <button onclick="go('s1b')">Usa 'AdIvIn4_M1_C0ntr4$eña!'</button>
   </div>
 
   <div id="s1a" class="section">
@@ -82,17 +82,129 @@
 
   <div id="s3a" class="section">
     <p>El archivo tenía un virus. Su compu se vuelve lenta y muestra errores. ¡Cuidado con las páginas no seguras!</p>
-    <button onclick="go('s4')">Final</button>
+    <button onclick="go('s4')">Continuar</button>
   </div>
 
   <div id="s3b" class="section">
     <p>¡Bien hecho! Alex evitó un sitio peligroso y encontró una alternativa segura.</p>
-    <button onclick="go('s4')">Final</button>
+    <button onclick="go('s4')">Continuar</button>
   </div>
 
   <div id="s4" class="section">
-    <h2>¡Fin de la simulación!</h2>
-    <p>Reflexioná: ¿Qué decisiones hubieras tomado vos? ¿Qué aprendiste?</p>
+    <p><strong>Situación 4:</strong> Alex publica una foto con su uniforme escolar y etiqueta su ubicación.</p>
+    <button onclick="go('s4a')">Deja la publicación pública</button>
+    <button onclick="go('s4b')">La pone privada y saca la ubicación</button>
+  </div>
+
+  <div id="s4a" class="section">
+    <p>Eso puede ponerlo en riesgo. Cualquiera podría saber dónde está. ¡Cuidado con la privacidad!</p>
+    <button onclick="go('s5')">Continuar</button>
+  </div>
+
+  <div id="s4b" class="section">
+    <p>¡Buena decisión! Alex protege su información y privacidad.</p>
+    <button onclick="go('s5')">Continuar</button>
+  </div>
+
+  <div id="s5" class="section">
+    <p><strong>Situación 5:</strong> Un contacto le pide una foto privada por mensaje.</p>
+    <button onclick="go('s5a')">La envía sin pensar</button>
+    <button onclick="go('s5b')">No la envía y habla con un adulto</button>
+  </div>
+
+  <div id="s5a" class="section">
+    <p>Eso puede tener consecuencias graves. ¡Nunca compartas contenido privado!</p>
+    <button onclick="go('s6')">Continuar</button>
+  </div>
+
+  <div id="s5b" class="section">
+    <p>¡Muy bien! Alex se protege y busca apoyo.</p>
+    <button onclick="go('s6')">Continuar</button>
+  </div>
+
+  <div id="s6" class="section">
+    <p><strong>Situación 6:</strong> Ve un comentario agresivo hacia un compañero en una publicación.</p>
+    <button onclick="go('s6a')">Lo ignora</button>
+    <button onclick="go('s6b')">Lo denuncia y apoya al compañero</button>
+  </div>
+
+  <div id="s6a" class="section">
+    <p>No hacer nada también puede permitir que el acoso continúe.</p>
+    <button onclick="go('s7')">Continuar</button>
+  </div>
+
+  <div id="s6b" class="section">
+    <p>¡Muy bien! Alex actúa con empatía y responsabilidad.</p>
+    <button onclick="go('s7')">Continuar</button>
+  </div>
+
+  <div id="s7" class="section">
+    <p><strong>Situación 7:</strong> Una app pide acceso a cámara, contactos y ubicación.</p>
+    <button onclick="go('s7a')">Acepta sin leer</button>
+    <button onclick="go('s7b')">Revisa los permisos y solo acepta lo necesario</button>
+  </div>
+
+  <div id="s7a" class="section">
+    <p>¡Cuidado! Esa app podría estar recolectando demasiada información.</p>
+    <button onclick="go('s8')">Continuar</button>
+  </div>
+
+  <div id="s7b" class="section">
+    <p>¡Excelente! Alex cuida su privacidad digital.</p>
+    <button onclick="go('s8')">Continuar</button>
+  </div>
+
+  <div id="s8" class="section">
+    <p><strong>Situación 8:</strong> Entra a una red social nueva y configura su perfil.</p>
+    <button onclick="go('s8a')">Deja todo público</button>
+    <button onclick="go('s8b')">Configura la privacidad para amigos</button>
+  </div>
+
+  <div id="s8a" class="section">
+    <p>Dejar todo público puede exponerlo a desconocidos. ¡Ojo!</p>
+    <button onclick="go('s9')">Continuar</button>
+  </div>
+
+  <div id="s8b" class="section">
+    <p>Muy bien. Alex limita quién puede ver su información.</p>
+    <button onclick="go('s9')">Continuar</button>
+  </div>
+
+  <div id="s9" class="section">
+    <p><strong>Situación 9:</strong> Está muchas horas en redes y le cuesta concentrarse en la escuela.</p>
+    <button onclick="go('s9a')">Elige seguir así</button>
+    <button onclick="go('s9b')">Decide limitar su tiempo y descansar más</button>
+  </div>
+
+  <div id="s9a" class="section">
+    <p>El uso excesivo puede afectar tu salud y rendimiento. ¡Balance es clave!</p>
+    <button onclick="go('s10')">Continuar</button>
+  </div>
+
+  <div id="s9b" class="section">
+    <p>¡Buena decisión! Equilibrio entre el mundo digital y real.</p>
+    <button onclick="go('s10')">Continuar</button>
+  </div>
+
+  <div id="s10" class="section">
+    <p><strong>Situación 10:</strong> Quiere compartir una noticia alarmante que vio en una red.</p>
+    <button onclick="go('s10a')">La comparte sin verificar</button>
+    <button onclick="go('s10b')">Verifica la fuente antes de compartir</button>
+  </div>
+
+  <div id="s10a" class="section">
+    <p>Podría estar difundiendo noticias falsas. ¡Siempre verificar!</p>
+    <button onclick="go('s11')">Final</button>
+  </div>
+
+  <div id="s10b" class="section">
+    <p>¡Bien hecho! Compartir con responsabilidad es parte del uso consciente de redes.</p>
+    <button onclick="go('s11')">Final</button>
+  </div>
+
+  <div id="s11" class="section">
+    <h2>¡Hemos terminado!</h2>
+    <p>¿Qué decisiones hubieras tomado vos? ¿Qué aprendiste?</p>
   </div>
 
   <script>
