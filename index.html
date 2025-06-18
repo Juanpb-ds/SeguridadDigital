@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulación de Seguridad Digital: Elige tu camino</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2, p {
+      margin-bottom: 16px;
+    }
+    h1 {
+      color: #58a6ff;
+    }
+    .section {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border-left: 4px solid #58a6ff;
+      border-radius: 8px;
+      background: #161b22;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      margin: 6px 8px 6px 0;
+      padding: 10px 16px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #238636;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #2ea043;
+    }
+    .nav-buttons {
+      margin-top: 20px;
+    }
+    .nav-buttons button {
+      background-color: #343a46;
+      color: #e6edf3;
+    }
+    .nav-buttons button:hover {
+      background-color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simulación Interactiva: Elegí tu camino</h1>
+  <p>Ayudá a <strong>Alex</strong>, un adolescente que usa redes sociales, a tomar decisiones seguras en internet.</p>
+
+  <div id="nav" class="nav-buttons">
+    <button onclick="resetSimulation()">Reiniciar simulación</button>
+    <button onclick="go('s1')">Volver al inicio</button>
+    <button onclick="goBack()">Volver a la anterior</button>
+  </div>
+
+  <div id="s1" class="section active">
+    <h2>1. Crear una contraseña</h2>
+    <p>Alex se está registrando en una nueva red social. ¿Qué contraseña debería elegir?</p>
+    <button onclick="go('s2')">123456alex</button>
+    <button onclick="go('s3')">M!Clave2024#</button>
+  </div>
+
+  <div id="s2" class="section">
+    <h2>Inseguro...</h2>
+    <p>Una contraseña común es fácil de adivinar. Podría ser víctima de un hackeo.</p>
+    <button onclick="go('s4')">Continuar</button>
+  </div>
+
+  <div id="s3" class="section">
+    <h2>¡Buena elección!</h2>
+    <p>Una contraseña segura mezcla letras, números y símbolos. Bien hecho.</p>
+    <button onclick="go('s4')">Continuar</button>
+  </div>
+
+  <div id="s4" class="section">
+    <h2>2. Link sospechoso</h2>
+    <p>Alex recibe un mensaje diciendo que ganó un celular, con un enlace. ¿Qué hace?</p>
+    <button onclick="go('s5')">Hace clic</button>
+    <button onclick="go('s6')">Lo ignora</button>
+  </div>
+
+  <div id="s5" class="section">
+    <h2>Phishing detectado</h2>
+    <p>Era una estafa. Alex descarga un virus y expone su información.</p>
+    <button onclick="go('s7')">Seguir</button>
+  </div>
+
+  <div id="s6" class="section">
+    <h2>Buena reacción</h2>
+    <p>Alex evitó un posible intento de robo de datos. 👏</p>
+    <button onclick="go('s7')">Seguir</button>
+  </div>
+
+  <div id="s7" class="section">
+    <h2>3. Publicación sensible</h2>
+    <p>Alex está por publicar una foto en uniforme escolar. ¿Qué hace?</p>
+    <button onclick="go('s8')">Publica sin pensarlo</button>
+    <button onclick="go('s9')">Revisa la privacidad</button>
+  </div>
+
+  <div id="s8" class="section">
+    <h2>Poca privacidad</h2>
+    <p>La foto puede ser vista por desconocidos y revelar información personal.</p>
+    <button onclick="go('s10')">Continuar</button>
+  </div>
+
+  <div id="s9" class="section">
+    <h2>Protección activa</h2>
+    <p>Alex limita quién ve sus publicaciones. Es una buena práctica en redes sociales.</p>
+    <button onclick="go('s10')">Continuar</button>
+  </div>
+
+  <div id="s10" class="section">
+    <h2>4. Verificación de noticias</h2>
+    <p>Alex ve una noticia viral. ¿Qué hace?</p>
+    <button onclick="go('s11')">La comparte enseguida</button>
+    <button onclick="go('s12')">Verifica la fuente primero</button>
+  </div>
+
+  <div id="s11" class="section">
+    <h2>Desinformación en cadena</h2>
+    <p>Alex comparte sin verificar y ayuda a difundir una noticia falsa.</p>
+    <button onclick="go('s14')">Continuar</button>
+  </div>
+
+  <div id="s12" class="section">
+    <h2>Actitud crítica</h2>
+    <p>Alex busca fuentes confiables antes de compartir. ¡Excelente hábito digital!</p>
+    <button onclick="go('s14')">Continuar</button>
+  </div>
+
+  <div id="s14" class="section">
+    <h2>5. Uso de dispositivos públicos</h2>
+    <p>Alex necesita imprimir algo y usa una computadora pública. ¿Qué hace al terminar?</p>
+    <button onclick="go('s15')">Olvida cerrar sesión</button>
+    <button onclick="go('s16')">Cierra sesión correctamente</button>
+  </div>
+
+  <div id="s15" class="section">
+    <h2>Peligro de sesión abierta</h2>
+    <p>Deja su cuenta abierta y alguien accede a su información.</p>
+    <button onclick="go('s17')">Continuar</button>
+  </div>
+
+  <div id="s16" class="section">
+    <h2>Precaución adecuada</h2>
+    <p>Alex protege su información cerrando sesión. Bien hecho.</p>
+    <button onclick="go('s17')">Continuar</button>
+  </div>
+
+  <div id="s17" class="section">
+    <h2>6. Ciberacoso</h2>
+    <p>Alex ve que alguien está siendo acosado en línea. ¿Cómo reacciona?</p>
+    <button onclick="go('s18')">No se mete</button>
+    <button onclick="go('s19')">Denuncia y ofrece ayuda</button>
+  </div>
+
+  <div id="s18" class="section">
+    <h2>Complicidad pasiva</h2>
+    <p>Ignorar el acoso puede empeorar la situación.</p>
+    <button onclick="go('s20')">Continuar</button>
+  </div>
+
+  <div id="s19" class="section">
+    <h2>Solidaridad digital</h2>
+    <p>Denunciar y acompañar ayuda a frenar el acoso. ¡Gran actitud!</p>
+    <button onclick="go('s20')">Continuar</button>
+  </div>
+
+  <div id="s20" class="section">
+    <h2>7. Datos personales en apps</h2>
+    <p>Una app le pide a Alex acceso a sus contactos y ubicación. ¿Qué hace?</p>
+    <button onclick="go('s21')">Acepta sin pensar</button>
+    <button onclick="go('s22')">Revisa si es necesario</button>
+  </div>
+
+  <div id="s21" class="section">
+    <h2>Exposición innecesaria</h2>
+    <p>La app ahora tiene información que puede usar maliciosamente.</p>
+    <button onclick="go('s23')">Continuar</button>
+  </div>
+
+  <div id="s22" class="section">
+    <h2>Buen control</h2>
+    <p>Alex evalúa si la app necesita realmente esos permisos. Muy responsable.</p>
+    <button onclick="go('s23')">Continuar</button>
+  </div>
+
+  <div id="s23" class="section">
+    <h2>8. Respeto en línea</h2>
+    <p>Alex está en un grupo de chat donde critican a una compañera. ¿Qué hace?</p>
+    <button onclick="go('s24')">Se suma a las burlas</button>
+    <button onclick="go('s25')">Defiende y propone respeto</button>
+  </div>
+
+  <div id="s24" class="section">
+    <h2>Conducta negativa</h2>
+    <p>Participar en el acoso afecta emocionalmente a otros.</p>
+    <button onclick="go('s26')">Finalizar</button>
+  </div>
+
+  <div id="s25" class="section">
+    <h2>Ciudadanía digital</h2>
+    <p>Alex promueve un espacio sano en redes. ¡Un gran ejemplo!</p>
+    <button onclick="go('s26')">Finalizar</button>
+  </div>
+
+  <div id="s26" class="section">
+    <h2>¡Fin de la simulación!</h2>
+    <p>Reflexioná: ¿Qué decisiones hubieras tomado vos? ¿Qué aprendiste?</p>
+    <div class="nav-buttons">
+      <button onclick="resetSimulation()">Reiniciar simulación</button>
+      <button onclick="go('s1')">Volver al inicio</button>
+    </div>
+  </div>
+
+  <script>
+    let historyStack = [];
+
+    function go(id) {
+      const current = document.querySelector('.section.active');
+      if (current) {
+        historyStack.push(current.id);
+        current.classList.remove('active');
+      }
+      document.getElementById(id).classList.add('active');
+    }
+
+    function goBack() {
+      const previousId = historyStack.pop();
+      if (previousId) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(previousId).classList.add('active');
+      }
+    }
+
+    function resetSimulation() {
+      historyStack = [];
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      go('s1');
+    }
+  </script>
+</body>
+</html>
