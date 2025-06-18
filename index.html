@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulación de Seguridad Digital: Elige tu camino</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f7ff;
+      color: #333;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .section {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: white;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #4b87f2;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3c6fd1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simulación Interactiva: Elegí tu camino</h1>
+  <p>Ayudá a <strong>Alex</strong>, un adolescente que usa redes sociales, a tomar decisiones seguras en internet.</p>
+
+  <div id="s1" class="section active">
+    <p><strong>Situación 1:</strong> Alex crea una cuenta nueva para un juego. El sistema le pide crear una contraseña.</p>
+    <button onclick="go('s1a')">Usa 'alex123'</button>
+    <button onclick="go('s1b')">Usa 'D3fi3nd3_M1_C0ntr4$eña!'</button>
+  </div>
+
+  <div id="s1a" class="section">
+    <p>La contraseña es débil. Una semana después, alguien entra a su cuenta y le roba los objetos del juego.</p>
+    <button onclick="go('s2')">Continuar</button>
+  </div>
+
+  <div id="s1b" class="section">
+    <p>¡Excelente! Alex usó una contraseña segura y su cuenta está protegida.</p>
+    <button onclick="go('s2')">Continuar</button>
+  </div>
+
+  <div id="s2" class="section">
+    <p><strong>Situación 2:</strong> Le llega un correo que dice: "Tu cuenta de redes será suspendida. Hacé clic acá para evitarlo".</p>
+    <button onclick="go('s2a')">Hace clic y pone sus datos</button>
+    <button onclick="go('s2b')">Revisa el remitente y decide no hacer clic</button>
+  </div>
+
+  <div id="s2a" class="section">
+    <p>Era una estafa (phishing). Le roban la cuenta. ¡Aprendió a no confiar en correos sospechosos!</p>
+    <button onclick="go('s3')">Continuar</button>
+  </div>
+
+  <div id="s2b" class="section">
+    <p>¡Muy bien! Alex detectó el phishing y evitó el robo de datos.</p>
+    <button onclick="go('s3')">Continuar</button>
+  </div>
+
+  <div id="s3" class="section">
+    <p><strong>Situación 3:</strong> Quiere descargar un programa para editar fotos, pero la web tiene muchos anuncios y errores.</p>
+    <button onclick="go('s3a')">Lo descarga igual</button>
+    <button onclick="go('s3b')">Busca otra web confiable</button>
+  </div>
+
+  <div id="s3a" class="section">
+    <p>El archivo tenía un virus. Su compu se vuelve lenta y muestra errores. ¡Cuidado con las páginas no seguras!</p>
+    <button onclick="go('s4')">Final</button>
+  </div>
+
+  <div id="s3b" class="section">
+    <p>¡Bien hecho! Alex evitó un sitio peligroso y encontró una alternativa segura.</p>
+    <button onclick="go('s4')">Final</button>
+  </div>
+
+  <div id="s4" class="section">
+    <h2>¡Fin de la simulación!</h2>
+    <p>Reflexioná: ¿Qué decisiones hubieras tomado vos? ¿Qué aprendiste?</p>
+  </div>
+
+  <script>
+    function go(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
